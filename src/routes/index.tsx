@@ -89,7 +89,7 @@ function Index() {
           </div>
           <div className="relative mx-auto w-full max-w-xl lg:justify-self-end">
             <div className="absolute -inset-5 -z-10 rounded-full border border-brand-soft sm:-inset-10" />
-            <img src={logoAsset.url} alt="AMV — Conectando Marketing e Vendas com Sucesso" width={1536} height={768} className="relative z-10 w-full object-contain rounded-md bg-logo-surface" />
+            <img src={logoAsset.url} alt="AMV — Conectando Marketing e Vendas com o Sucesso" width={1536} height={768} className="relative z-10 w-full object-contain rounded-md bg-logo-surface" />
             <svg className="route-float absolute -bottom-8 -right-5 z-0 w-2/3 text-brand sm:-right-14" viewBox="0 0 420 170" fill="none" aria-hidden="true"><path d="M12 150C112 150 180 121 245 69L343 21" stroke="currentColor" strokeWidth="10" strokeLinecap="round"/><path d="M315 14L362 12L345 57" stroke="currentColor" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </div>
         </div>

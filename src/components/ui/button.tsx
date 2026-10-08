@@ -14,7 +14,7 @@ const buttonVariants = cva(
         amvOutline:
           "border border-brand-deep/20 bg-background text-brand-deep hover:border-brand hover:bg-brand-soft/50",
         amvLight:
-          "bg-background text-brand-deep shadow-sm hover:-translate-y-0.5 hover:bg-brand-soft",
+          "bg-on-panel text-brand-panel shadow-sm hover:-translate-y-0.5 hover:bg-on-panel/90",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
