@@ -18,7 +18,7 @@ function QuemSomos() {
       <p>Mais do que aprender Marketing e Vendas, queremos vivenciar o mercado, desenvolver talentos e formar profissionais preparados para fazer a diferença.</p>
       <p>Valorizamos a criatividade, a inovação, a ética, a colaboração, o empreendedorismo e o compromisso com resultados.</p>
       <p>Somos uma agência em formação, movida pelo conhecimento, pela prática e pela vontade de crescer.</p>
-      <p className="border-l-2 border-brand-orange pl-5 font-bold text-brand-deep">AMV - Conectando Marketing e Vendas com Sucesso!</p>
+      <p className="border-l-2 border-brand-orange pl-5 font-bold text-brand-deep">AMV - Conectando Marketing e Vendas com o Sucesso!</p>
     </div>
   </InstitutionalPage>;
 }
