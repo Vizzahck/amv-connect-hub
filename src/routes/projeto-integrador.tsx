@@ -54,7 +54,7 @@ const blocks = [
 function ProjetoIntegrador() {
   return <main className="overflow-hidden bg-background pb-20 pt-32 text-foreground sm:pb-28 sm:pt-40">
     <section className="relative border-b border-border">
-      <div className="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true"><svg className="h-full w-full" viewBox="0 0 1440 460" fill="none" preserveAspectRatio="none"><path d="M-60 400C200 396 300 300 520 292C740 284 820 366 1010 274C1180 192 1250 86 1500 54" stroke="currentColor" className="route-draw text-brand-soft" strokeWidth="2" /><circle cx="520" cy="292" r="5" className="fill-brand" /><circle cx="1010" cy="274" r="5" className="fill-brand" /></svg></div>
+      <div className="pointer-events-none absolute inset-0 hidden opacity-70 sm:block" aria-hidden="true"><svg className="h-full w-full" viewBox="0 0 1440 460" fill="none" preserveAspectRatio="none"><path d="M-60 400C200 396 300 300 520 292C740 284 820 366 1010 274C1180 192 1250 86 1500 54" stroke="currentColor" className="route-draw text-brand-soft" strokeWidth="2" /><circle cx="520" cy="292" r="5" className="fill-brand" /><circle cx="1010" cy="274" r="5" className="fill-brand" /></svg></div>
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <Button asChild variant="ghost" className="mb-9 -ml-3 text-muted-foreground"><Link to="/"><ArrowLeft /> Início</Link></Button>
         <div className="rise-in grid gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
@@ -69,15 +69,15 @@ function ProjetoIntegrador() {
     </section>
 
     <div className="mx-auto max-w-7xl px-5 pt-14 lg:px-8">
-      <div className="max-w-5xl border-l-2 border-brand-soft pl-8 sm:pl-12">
-        <div className="space-y-12 sm:space-y-14">
-          {blocks.map(({ icon: Icon, kicker, title, text, chips }) => <article key={title} className="relative">
-            <span className="absolute -left-[2.3rem] top-1 size-3 rounded-full border-4 border-background bg-brand sm:-left-[3.1rem]" aria-hidden="true" />
-            <span className="grid size-11 place-items-center rounded-md bg-brand-soft text-brand-deep"><Icon className="size-5" /></span>
-            <p className="mt-5 text-xs font-extrabold uppercase text-brand">{kicker}</p>
+      <div className="relative mx-auto max-w-5xl">
+        <span className="absolute bottom-6 left-[21px] top-6 w-0.5 bg-brand-soft" aria-hidden="true" />
+        <div className="space-y-12 sm:space-y-16">
+          {blocks.map(({ icon: Icon, kicker, title, text, chips }) => <article key={title} className="relative pl-16 sm:pl-20">
+            <span className="absolute left-0 top-0 grid size-11 place-items-center rounded-full border-4 border-background bg-brand-soft text-brand-deep"><Icon className="size-5" /></span>
+            <p className="text-xs font-extrabold uppercase text-brand">{kicker}</p>
             <h2 className="mt-3 text-xl font-extrabold text-brand-deep sm:text-2xl">{title}</h2>
             <p className="mt-4 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg sm:leading-9">{text}</p>
-            {chips.length > 0 && <ul className="mt-6 flex flex-wrap gap-2">{chips.map((chip) => <li key={chip} className="rounded-full border border-border bg-surface-blue px-4 py-2 text-sm font-semibold text-brand-deep">{chip}</li>)}</ul>}
+            {chips.length > 0 && <ul className="mt-6 flex max-w-3xl flex-wrap gap-2">{chips.map((chip) => <li key={chip} className="rounded-full border border-border bg-surface-blue px-4 py-2 text-sm font-semibold text-brand-deep">{chip}</li>)}</ul>}
           </article>)}
         </div>
       </div>
