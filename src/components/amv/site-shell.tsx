@@ -33,10 +33,12 @@ export function SiteShell({ children }: { children: ReactNode }) {
   }, []);
   useEffect(() => { setMenuOpen(false); }, [pathname]);
   const toggleTheme = () => {
-    const next = !dark;
-    setDark(next);
-    document.documentElement.classList.toggle("dark", next);
-    try { localStorage.setItem("amv-theme", next ? "dark" : "light"); } catch { /* Optional persistence. */ }
+    setDark((prev) => {
+      const next = !prev;
+      document.documentElement.classList.toggle("dark", next);
+      try { localStorage.setItem("amv-theme", next ? "dark" : "light"); } catch { /* Optional persistence. */ }
+      return next;
+    });
   };
   const sectionHref = (id: string) => pathname === "/" ? `#${id}` : `/#${id}`;
   return <>
@@ -49,7 +51,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           {homeSections.slice(1).map(([label, id]) => <a key={id} href={sectionHref(id)} className="text-sm font-semibold text-ink/70 hover:text-brand">{label}</a>)}
         </nav>
         <div className="ml-auto flex shrink-0 items-center gap-2 xl:ml-2">
-          <Button variant="ghost" size="icon" title={dark ? "Ativar modo claro" : "Ativar modo escuro"} aria-label={dark ? "Ativar modo claro" : "Ativar modo escuro"} aria-pressed={dark} onClick={toggleTheme}>{dark ? <Sun /> : <Moon />}</Button>
+          <Button type="button" variant="outline" size="icon" className="size-11 touch-manipulation select-none" title={dark ? "Ativar modo claro" : "Ativar modo escuro"} aria-label={dark ? "Ativar modo claro" : "Ativar modo escuro"} aria-pressed={dark} onClick={toggleTheme}>{dark ? <Sun className="size-5" /> : <Moon className="size-5" />}</Button>
           <Button asChild variant="amv" className="hidden md:inline-flex"><WhatsAppLink>Fale conosco <MessageCircle /></WhatsAppLink></Button>
           <Button variant="ghost" size="icon" className="xl:hidden" aria-label={menuOpen ? "Fechar menu" : "Abrir menu"} aria-expanded={menuOpen} aria-controls="amv-mobile-menu" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <X /> : <Menu />}</Button>
         </div>
