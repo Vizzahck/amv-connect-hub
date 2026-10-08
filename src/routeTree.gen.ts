@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MissaoRouteImport } from './routes/missao'
+import { Route as QuemSomosRouteImport } from './routes/quem-somos'
+import { Route as ValoresRouteImport } from './routes/valores'
+import { Route as VisaoRouteImport } from './routes/visao'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MissaoRoute = MissaoRouteImport.update({
+  id: '/missao',
+  path: '/missao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuemSomosRoute = QuemSomosRouteImport.update({
+  id: '/quem-somos',
+  path: '/quem-somos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ValoresRoute = ValoresRouteImport.update({
+  id: '/valores',
+  path: '/valores',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisaoRoute = VisaoRouteImport.update({
+  id: '/visao',
+  path: '/visao',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/missao': typeof MissaoRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/valores': typeof ValoresRoute
+  '/visao': typeof VisaoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/missao': typeof MissaoRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/valores': typeof ValoresRoute
+  '/visao': typeof VisaoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/missao': typeof MissaoRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/valores': typeof ValoresRoute
+  '/visao': typeof VisaoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/missao' | '/quem-somos' | '/valores' | '/visao'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/missao' | '/quem-somos' | '/valores' | '/visao'
+  id: '__root__' | '/' | '/missao' | '/quem-somos' | '/valores' | '/visao'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MissaoRoute: typeof MissaoRoute
+  QuemSomosRoute: typeof QuemSomosRoute
+  ValoresRoute: typeof ValoresRoute
+  VisaoRoute: typeof VisaoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +88,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/missao': {
+      id: '/missao'
+      path: '/missao'
+      fullPath: '/missao'
+      preLoaderRoute: typeof MissaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quem-somos': {
+      id: '/quem-somos'
+      path: '/quem-somos'
+      fullPath: '/quem-somos'
+      preLoaderRoute: typeof QuemSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/valores': {
+      id: '/valores'
+      path: '/valores'
+      fullPath: '/valores'
+      preLoaderRoute: typeof ValoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visao': {
+      id: '/visao'
+      path: '/visao'
+      fullPath: '/visao'
+      preLoaderRoute: typeof VisaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MissaoRoute: MissaoRoute,
+  QuemSomosRoute: QuemSomosRoute,
+  ValoresRoute: ValoresRoute,
+  VisaoRoute: VisaoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
