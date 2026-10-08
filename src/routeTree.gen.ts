@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as MissaoRouteImport } from './routes/missao'
+import { Route as ProjetoIntegradorRouteImport } from './routes/projeto-integrador'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as ValoresRouteImport } from './routes/valores'
 import { Route as VisaoRouteImport } from './routes/visao'
@@ -23,6 +24,11 @@ const IndexRoute = IndexRouteImport.update({
 const MissaoRoute = MissaoRouteImport.update({
   id: '/missao',
   path: '/missao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetoIntegradorRoute = ProjetoIntegradorRouteImport.update({
+  id: '/projeto-integrador',
+  path: '/projeto-integrador',
   getParentRoute: () => rootRouteImport,
 } as any)
 const QuemSomosRoute = QuemSomosRouteImport.update({
@@ -44,6 +50,7 @@ const VisaoRoute = VisaoRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/missao': typeof MissaoRoute
+  '/projeto-integrador': typeof ProjetoIntegradorRoute
   '/quem-somos': typeof QuemSomosRoute
   '/valores': typeof ValoresRoute
   '/visao': typeof VisaoRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/missao': typeof MissaoRoute
+  '/projeto-integrador': typeof ProjetoIntegradorRoute
   '/quem-somos': typeof QuemSomosRoute
   '/valores': typeof ValoresRoute
   '/visao': typeof VisaoRoute
@@ -59,21 +67,42 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/missao': typeof MissaoRoute
+  '/projeto-integrador': typeof ProjetoIntegradorRoute
   '/quem-somos': typeof QuemSomosRoute
   '/valores': typeof ValoresRoute
   '/visao': typeof VisaoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/missao' | '/quem-somos' | '/valores' | '/visao'
+  fullPaths:
+    | '/'
+    | '/missao'
+    | '/projeto-integrador'
+    | '/quem-somos'
+    | '/valores'
+    | '/visao'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/missao' | '/quem-somos' | '/valores' | '/visao'
-  id: '__root__' | '/' | '/missao' | '/quem-somos' | '/valores' | '/visao'
+  to:
+    | '/'
+    | '/missao'
+    | '/projeto-integrador'
+    | '/quem-somos'
+    | '/valores'
+    | '/visao'
+  id:
+    | '__root__'
+    | '/'
+    | '/missao'
+    | '/projeto-integrador'
+    | '/quem-somos'
+    | '/valores'
+    | '/visao'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   MissaoRoute: typeof MissaoRoute
+  ProjetoIntegradorRoute: typeof ProjetoIntegradorRoute
   QuemSomosRoute: typeof QuemSomosRoute
   ValoresRoute: typeof ValoresRoute
   VisaoRoute: typeof VisaoRoute
@@ -93,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/missao'
       fullPath: '/missao'
       preLoaderRoute: typeof MissaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projeto-integrador': {
+      id: '/projeto-integrador'
+      path: '/projeto-integrador'
+      fullPath: '/projeto-integrador'
+      preLoaderRoute: typeof ProjetoIntegradorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/quem-somos': {
@@ -122,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   MissaoRoute: MissaoRoute,
+  ProjetoIntegradorRoute: ProjetoIntegradorRoute,
   QuemSomosRoute: QuemSomosRoute,
   ValoresRoute: ValoresRoute,
   VisaoRoute: VisaoRoute,
