@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WhatsAppLink } from "@/components/amv/site-shell";
-import logoAsset from "@/assets/amv-nova-logo.jpg.asset.json";
+import logoAsset from "@/assets/amv-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -97,7 +97,7 @@
   --brand-orange: oklch(0.60 0.18 48);
   --brand-panel: oklch(0.22 0.14 263);
   --on-panel: oklch(0.99 0 0);
-  --logo-surface: oklch(0 0 0);
+  --logo-surface: oklch(0.99 0 0);
   --brand-deep: oklch(0.22 0.14 263);
   --brand-soft: oklch(0.92 0.05 227);
   --surface-blue: oklch(0.975 0.012 235);

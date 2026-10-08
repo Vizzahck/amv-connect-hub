@@ -2,7 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { ArrowRight, ChevronRight, MapPin, Menu, MessageCircle, Moon, Sun, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/amv-nova-logo.jpg.asset.json";
+import logoAsset from "@/assets/amv-logo.png.asset.json";
 
 export const institutionalPages = [
   { label: "Quem Somos", to: "/quem-somos" },
