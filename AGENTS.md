@@ -9,4 +9,6 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Keep the AMV website as a single scrolling institutional page because its visual growth line connects the sections into one narrative.
+- Keep the scrolling home page and give Quem Somos, Missão, Visão and Valores independent TanStack routes because institutional content needs direct navigation without replacing the existing home experience.
+- Share the header, theme control and footer through SiteShell in the root layout so every content page maintains consistent navigation and identity.
+- Define separate heading, dark-panel and button color roles in global theme tokens so light and dark modes remain legible without per-page color overrides.

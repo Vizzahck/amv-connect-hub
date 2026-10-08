@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-        amv: "bg-brand text-primary-foreground shadow-sm hover:-translate-y-0.5 hover:bg-brand-deep hover:shadow-lg",
+        amv: "bg-primary text-primary-foreground shadow-sm hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-lg",
         amvOutline:
           "border border-brand-deep/20 bg-background text-brand-deep hover:border-brand hover:bg-brand-soft/50",
         amvLight:
