@@ -3,6 +3,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { ArrowRight, ChevronRight, MapPin, Menu, MessageCircle, Moon, Sun, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/amv-logo.png.asset.json";
+import headerLogoAsset from "@/assets/amv-header-symbol.png.asset.json";
 
 export const institutionalPages = [
   { label: "Quem Somos", to: "/quem-somos" },
@@ -44,7 +45,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   return <>
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center gap-3 px-5 lg:px-8">
-        <Link to="/" aria-label="AMV Conectar — início" className="shrink-0"><img src={logoAsset.url} alt="AMV — Conectando Marketing e Vendas com o Sucesso" width={1328} height={457} className="h-[72px] w-36 object-contain" /></Link>
+        <Link to="/" aria-label="AMV Conectar — início" className="shrink-0"><img src={headerLogoAsset.url} alt="AMV — Conectando Marketing e Vendas com o Sucesso" width={570} height={438} className="h-[72px] w-36 object-contain" /></Link>
         <nav aria-label="Navegação principal" className="ml-auto hidden items-center gap-4 xl:flex">
           <a href={sectionHref("inicio")} className="text-sm font-semibold text-ink/70 hover:text-brand">Início</a>
           {institutionalPages.map(({ label, to }) => <Link key={to} to={to} activeProps={{ className: "text-brand-orange" }} className="text-sm font-semibold text-ink/70 hover:text-brand">{label}</Link>)}
