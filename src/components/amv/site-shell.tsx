@@ -2,7 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { ArrowRight, ChevronRight, MapPin, Menu, MessageCircle, Moon, Sun, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/amv-conectar-logo.jpg.asset.json";
+import logoAsset from "@/assets/amv-nova-logo.jpg.asset.json";
 
 export const institutionalPages = [
   { label: "Quem Somos", to: "/quem-somos" },
@@ -41,7 +41,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   return <>
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center gap-3 px-5 lg:px-8">
-        <Link to="/" aria-label="AMV Conectar — início" className="shrink-0"><img src={logoAsset.url} alt="AMV Conectar — Conectar com sucesso" className="h-11 w-auto rounded-sm bg-logo-surface" /></Link>
+        <Link to="/" aria-label="AMV Conectar — início" className="shrink-0"><img src={logoAsset.url} alt="AMV — Conectando Marketing e Vendas com Sucesso" width={1536} height={768} className="h-[72px] w-36 rounded-sm bg-logo-surface object-contain" /></Link>
         <nav aria-label="Navegação principal" className="ml-auto hidden items-center gap-4 xl:flex">
           <a href={sectionHref("inicio")} className="text-sm font-semibold text-ink/70 hover:text-brand">Início</a>
           {institutionalPages.map(({ label, to }) => <Link key={to} to={to} activeProps={{ className: "text-brand-orange" }} className="text-sm font-semibold text-ink/70 hover:text-brand">{label}</Link>)}
@@ -63,7 +63,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
     {children}
     <footer className="bg-brand-panel py-12">
       <div className="mx-auto grid max-w-7xl gap-9 px-5 md:grid-cols-[1fr_1fr] lg:px-8">
-        <div><Link to="/" className="text-xl font-extrabold text-on-panel">AMV Conectar</Link><p className="mt-1 text-sm text-on-panel/70">Conectar com sucesso</p><Button asChild variant="amvLight" className="mt-6"><WhatsAppLink><MessageCircle /> WhatsApp <ArrowRight /></WhatsAppLink></Button></div>
+        <div><Link to="/" aria-label="AMV Conectar — início"><img src={logoAsset.url} alt="AMV — Conectando Marketing e Vendas com Sucesso" width={1536} height={768} loading="lazy" className="h-32 w-64 max-w-full rounded-sm bg-logo-surface object-contain" /></Link><p className="mt-1 text-sm text-on-panel/70">Conectar com sucesso</p><Button asChild variant="amvLight" className="mt-6"><WhatsAppLink><MessageCircle /> WhatsApp <ArrowRight /></WhatsAppLink></Button></div>
         <address className="flex gap-3 text-sm not-italic leading-7 text-on-panel/80"><MapPin className="mt-1 size-5 shrink-0 text-brand-orange" /><span>Rua Edvaldo Moraes, nº 934<br />(ou Travessa João Mariano, s/n)<br />Bairro Antigo Aeroporto<br />Pinheiro - MA<br />CEP 65200-000</span></address>
         <nav aria-label="Navegação do rodapé" className="flex flex-wrap gap-x-6 gap-y-3 md:col-span-2">
           {homeSections.map(([label, id]) => <a key={id} href={sectionHref(id)} className="text-sm font-semibold text-on-panel/75 hover:text-on-panel">{label}</a>)}
