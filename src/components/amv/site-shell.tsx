@@ -4,6 +4,7 @@ import { ArrowRight, ChevronRight, MapPin, Menu, MessageCircle, Moon, Sun, X } f
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/amv-logo.png.asset.json";
 import headerLogoAsset from "@/assets/amv-header-symbol.png.asset.json";
+import { AmvAssistant } from "@/components/amv/assistant";
 
 export const institutionalPages = [
   { label: "Quem Somos", to: "/quem-somos" },
@@ -66,6 +67,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       </nav>}
     </header>
     {children}
+    <AmvAssistant />
     <footer className="bg-brand-panel py-12">
       <div className="mx-auto grid max-w-7xl gap-9 px-5 md:grid-cols-[1fr_1fr] lg:px-8">
         <div><Link to="/" aria-label="AMV Conectar — início"><img src={logoAsset.url} alt="AMV — Conectando Marketing e Vendas com o Sucesso" width={1328} height={457} loading="lazy" className="h-32 w-64 max-w-full object-contain" /></Link><p className="mt-1 text-sm text-on-panel/70">Conectar com sucesso</p><Button asChild variant="amvLight" className="mt-6"><WhatsAppLink><MessageCircle /> WhatsApp <ArrowRight /></WhatsAppLink></Button></div>
