@@ -17,7 +17,7 @@ const faqs: Faq[] = [
   { q: "O que significa AMV?", a: "AMV significa Agência de Marketing e Vendas." },
 ];
 
-type Msg = { from: "bot" | "user"; text: string; whatsapp?: boolean };
+type Msg = { from: "bot" | "user"; text: string; whatsapp?: boolean | undefined };
 const welcome: Msg = { from: "bot", text: "Olá! Eu sou o Assistente AMV. Escolha uma pergunta abaixo:" };
 
 export function AmvAssistant() {
